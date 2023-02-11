@@ -1,3 +1,4 @@
+import { MoviesList } from 'components/MoviesList';
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'services/Api';
 
@@ -13,14 +14,7 @@ export const Home = () => {
   return (
     <main>
       <h1>Trending today</h1>
-      <div>
-        <ul>
-          {trends.length > 0 &&
-            trends.map(({ id, title }) => {
-              return <li key={id}>{title}</li>;
-            })}
-        </ul>
-      </div>
+      <MoviesList movies={trends} />
     </main>
   );
 };
