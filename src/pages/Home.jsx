@@ -10,6 +10,7 @@ export const Home = () => {
     // setTrends(response);
     getTrendingMovies().then(movies => setTrends(movies.results));
   }, []);
+  // console.log(trends);
 
   return (
     <main>
