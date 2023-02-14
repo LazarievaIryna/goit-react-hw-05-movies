@@ -1,20 +1,31 @@
 import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { getMovieById } from 'services/Api';
 
-export const MovieDetails = ({ movieId }) => {
-  //   const { movieId } = useParams();
+export const MovieDetails = () => {
+  const { movieId } = useParams();
+  console.log(movieId);
 
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    getMovieById(movieId).then(movie => setMovie(movie));
+    async function fetchMovie(movieId) {
+      try {
+        const data = getMovieById(movieId);
+        setMovie(data);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchMovie(movieId);
   }, [movieId]);
-  console.log(movieId);
-  const { title } = movie;
+
+  console.log(movie);
+  // const { title } = movie;
   return (
     <div>
-      <h1>{title}</h1>
+      <h1>title</h1>
       <Outlet />
     </div>
   );
