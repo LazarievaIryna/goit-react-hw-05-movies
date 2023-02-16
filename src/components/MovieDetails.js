@@ -25,7 +25,7 @@ export const MovieDetails = () => {
   // const { title } = movie;
   return (
     <div>
-      <h1>title</h1>
+      {/* <h1>{movie.title}</h1> */}
       <Outlet />
     </div>
   );

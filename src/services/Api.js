@@ -23,6 +23,6 @@ export const getTrendingMovies = async () => {
 };
 export const getMovieById = async id => {
   const response = await axios.get(`/movie/${id}`);
-  return response.data;
-  // console.log(response.data);
+  // return response.data;
+  console.log(response.data);
 };
