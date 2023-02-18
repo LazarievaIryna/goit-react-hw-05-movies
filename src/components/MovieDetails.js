@@ -1,33 +1,24 @@
 import { useState, useEffect } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
-import { getMovieById } from 'services/Api';
+import { GetMovieById } from 'services/Api';
 
-export const MovieDetails = () => {
-  const [movie, setMovie] = useState({});
-  const { movieId } = useParams();
+export default function MovieDetails() {
+  const [movie, setMovie] = useState('');
+  const { movieId } = useParams('');
   // console.log(movieId);
 
+  //
   useEffect(() => {
-    async function fetchMovie(movieId) {
-      try {
-        const response = await getMovieById(movieId);
-        setMovie(response);
-        // console.log(response);
-      } catch (error) {
-        console.log(error);
-      }
+    if (movieId === '') {
+      return;
     }
-    fetchMovie(movieId);
-    // getMovieById(movieId)
-    //   .then(movie => setMovie(movie))
-    //   .catch(error => console.log('Error:', error));
+    GetMovieById(movieId)
+      .then(response => setMovie(response))
+      .catch(error => console.log(error));
   }, [movieId]);
 
-  console.log(movie.release_date);
+  console.log(movie.vote_average);
   const { title, vote_average, release_date } = movie;
-  // const str = movie.release_date;
-  // const date = str.slice(0, 4);
-  // console.log(release_date);
 
   return (
     <div>
@@ -41,4 +32,4 @@ export const MovieDetails = () => {
       <Outlet />
     </div>
   );
-};
+}
