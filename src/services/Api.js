@@ -18,11 +18,11 @@ axios.defaults.params = {
   api_key: API_KEY,
 };
 export const getTrendingMovies = async () => {
-  const response = await axios.get('/trending/movie/day');
-  return response.data;
+  const { data } = await axios.get('/trending/movie/day');
+  return await data.results;
 };
 export const GetMovieById = async id => {
   const response = await axios.get(`/movie/${id}`);
-  return response.data;
+  return await response.data;
   // console.log(response.data);
 };
