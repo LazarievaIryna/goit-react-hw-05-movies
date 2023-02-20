@@ -1,3 +1,5 @@
+import{Wrapper} from './MovieCard.styled'
+
 export const MovieCard = ({ movieInfo }) => {
   const { title, release_date, vote_average, overview, genres, poster_path } =
     movieInfo;
@@ -7,7 +9,7 @@ export const MovieCard = ({ movieInfo }) => {
   const genreList = genres.map(genre => genre.name).join(', ');
   const imgUrl = 'https://image.tmdb.org/t/p/w500';
   return (
-    <section>
+    <Wrapper>
       <img src={`${imgUrl}${poster_path}`} alt={title} />
       <h2>
         {title}&nbsp;({date})
@@ -16,6 +18,6 @@ export const MovieCard = ({ movieInfo }) => {
       <p>{overview}</p>
       <p>Genres</p>
       <p>{genreList}</p>
-    </section>
+    </Wrapper>
   );
 };
