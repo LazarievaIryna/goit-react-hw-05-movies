@@ -1,4 +1,4 @@
-import{Wrapper} from './MovieCard.styled'
+import{Wrapper, Card} from './MovieCard.styled'
 
 export const MovieCard = ({ movieInfo }) => {
   const { title, release_date, vote_average, overview, genres, poster_path } =
@@ -10,7 +10,9 @@ export const MovieCard = ({ movieInfo }) => {
   const imgUrl = 'https://image.tmdb.org/t/p/w500';
   return (
     <Wrapper>
+      
       <img src={`${imgUrl}${poster_path}`} alt={title} />
+      <Card>
       <h2>
         {title}&nbsp;({date})
       </h2>
@@ -18,6 +20,7 @@ export const MovieCard = ({ movieInfo }) => {
       <p>{overview}</p>
       <p>Genres</p>
       <p>{genreList}</p>
+      </Card>
     </Wrapper>
   );
 };
