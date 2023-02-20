@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { GetMovieById } from 'services/Api';
 import { MovieCard } from './MovieCard';
 
@@ -17,6 +17,16 @@ const MovieDetails = () => {
 
   console.log(movie);
 
-  return <div>{movie && <MovieCard movieInfo={movie} />}</div>;
+  return (
+    <div>{movie && <MovieCard movieInfo={movie} />}
+    <div>
+      <p>Additional information</p>
+      <ul>
+        <li> <Link to="cast">Cast</Link></li>
+        <li> <Link to="reviews">Reviews</Link></li>
+      </ul>
+    </div>
+    </div>
+  )
 };
 export default MovieDetails;
