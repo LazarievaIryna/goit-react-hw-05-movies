@@ -1,5 +1,3 @@
 import styled from 'styled-components';
 
-export const MovieCard = styled.section`
-
-`;
+export const MovieCard=styled.section``
