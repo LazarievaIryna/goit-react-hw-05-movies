@@ -4,7 +4,7 @@ import { GetMovieById } from 'services/Api';
 import { MovieCard } from './MovieCard';
 
 const MovieDetails = () => {
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
   // console.log(movieId);
 
@@ -17,10 +17,6 @@ const MovieDetails = () => {
 
   console.log(movie);
 
-  return (
-    <div>
-      <MovieCard movieInfo={movie} />
-    </div>
-  );
+  return <div>{movie && <MovieCard movieInfo={movie} />}</div>;
 };
 export default MovieDetails;
