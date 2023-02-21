@@ -1,3 +1,5 @@
+
+
 import{Wrapper, Card} from './MovieCard.styled'
 
 export const MovieCard = ({ movieInfo }) => {
@@ -21,6 +23,7 @@ export const MovieCard = ({ movieInfo }) => {
       <p>Genres</p>
       <p>{genreList}</p>
       </Card>
+      
     </Wrapper>
   );
 };

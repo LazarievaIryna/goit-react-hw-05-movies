@@ -4,6 +4,8 @@ import { Container, Header, Link } from './App.styled';
 import Home from 'pages/Home';
 import MovieDetails from './MovieDetails';
 import { Movies } from 'pages/Movies';
+import { Cast } from './Cast';
+import { Reviews } from './Reviews';
 
 // const MovieDetails = lazy(() => import('../components/MovieDetails'));
 
@@ -21,7 +23,10 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="movies" element={<Movies />} />
-        <Route path="movies/:movieId" element={<MovieDetails />} />
+        <Route path="movies/:movieId" element={<MovieDetails />} >
+        <Route path="cast" element={<Cast/>} />
+        <Route path="reviews" element={<Reviews/>} />
+        </Route>
       </Routes>
     </Container>
   );

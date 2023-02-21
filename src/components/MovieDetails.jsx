@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
 import { GetMovieById } from 'services/Api';
 import { MovieCard } from './MovieCard';
 
@@ -15,7 +15,7 @@ const MovieDetails = () => {
     GetMovieById(movieId).then(response => setMovie(response));
   }, [movieId]);
 
-  console.log(movie);
+  // console.log(movie);
 
   return (
     <div>{movie && <MovieCard movieInfo={movie} />}
@@ -26,7 +26,9 @@ const MovieDetails = () => {
         <li> <Link to="reviews">Reviews</Link></li>
       </ul>
     </div>
+    <Outlet/>
     </div>
+    
   )
 };
 export default MovieDetails;
