@@ -8,7 +8,7 @@ import { getMovieByQuery } from 'services/Api';
 export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies]=useState([])
-  const [query, setQuery]=useState('')
+  // const [query, setQuery]=useState('')
 
   useEffect(()=>{
     const query = searchParams.get("query") ?? "";
@@ -16,22 +16,22 @@ export const Movies = () => {
     getMovieByQuery(query).then(res=>setMovies(res))
   },[searchParams])
 
-  const newQuery = e => {
-    setQuery(e.target.value);
-    console.log(e)
-  };
+  // const newQuery = e => {
+  //   setQuery(e.target.value);
+  //   console.log(e)
+  // };
   
 
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = query => {
+    
     setSearchParams(query !== '' ? { query } : {});
   };
 console.log(movies)
   return (
     <div>
       
-      <SearchBox onSubmit={handleSubmit} onChange={newQuery}/>
+      <SearchBox onSubmit={handleSubmit}/>
       <ListMovies movies={movies}/>
       <Outlet />
     </div>
