@@ -8,30 +8,34 @@ import { getMovieByQuery } from 'services/Api';
 export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies]=useState([])
-  // const [query, setQuery]=useState('')
+  
+  const movieName=searchParams.get('query')
+  // console.log(movieName)
 
   useEffect(()=>{
-    const query = searchParams.get("query") ?? "";
-    if(!query){return}
-    getMovieByQuery(query).then(res=>setMovies(res))
-  },[searchParams])
-
-  // const newQuery = e => {
-  //   setQuery(e.target.value);
-  //   console.log(e)
-  // };
+    
+    if(!movieName){
+      
+      return}
+    getMovieByQuery(movieName).then(res=>setMovies(res))
+  },[movieName])
   
 
+ const handleSearch=query=>{
+  if(!query){
+    alert('Empty query')
+    return
+  }
+  setSearchParams({query})
+ }
 
-  const handleSubmit = query => {
-    
-    setSearchParams(query !== '' ? { query } : {});
-  };
+
+ 
 console.log(movies)
   return (
     <div>
       
-      <SearchBox onSubmit={handleSubmit}/>
+      <SearchBox onSubmit={handleSearch}/>
       <ListMovies movies={movies}/>
       <Outlet />
     </div>

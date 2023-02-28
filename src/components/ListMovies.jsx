@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom';
 export const ListMovies=({movies})=>{
     return <div>
-        <ul key={movies.id}>
-<li>
-    
-</li>
-        </ul>
+        {movies.length > 0 &&
+        movies.map(movie => (
+          <div key={movie.id}>
+            <Link to={`/movies/${movie.id}`}>
+              <p>{movie.title}</p>
+            </Link>
+          </div>
+        ))}
     </div>
 }

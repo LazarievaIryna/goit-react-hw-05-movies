@@ -1,30 +1,34 @@
+import { useState } from "react";
 import { Wrapper, Input } from "./SearchBox.styled";
 
 export const SearchBox = ({ onSubmit }) => {
-  const handleSubmit=event=>{
-    event.preventDefault()
-    const form=event.currentTarget;
-    const searchValue=form.elements.searchValue.value
+const [query, setQuery]=useState('')
 
-    if(searchValue.trim()===''){
-      alert('Please choose movie')
-      return
-    }
-onSubmit(searchValue)
-form.reset()
+const handleChange=event=>{
+  setQuery(event.target.value)
+  
+}
+const handleSubmit=event=>{
+  event.preventDefault()
+  onSubmit(query)
+  setQuery('')
+}
+
+return (
+  <Wrapper>
+    <form onSubmit={handleSubmit}>
+    <Input
+      type="text"
+      autoComplete="off"
+      autoFocus
+      value={query}
+      // name="searchValue"
+      onChange={handleChange}
+    />
+    <button type="submit">Search</button>
+    </form>
+  </Wrapper>
+);
+  
   }
-  return (
-    <Wrapper>
-      <form onSubmit={handleSubmit}>
-      <Input
-        type="text"
-        autoComplete="off"
-        autoFocus
-        name="searchValue"
-        // onChange={onChange}
-      />
-      <button type="submit">Search</button>
-      </form>
-    </Wrapper>
-  );
-};
+  
