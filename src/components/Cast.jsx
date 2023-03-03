@@ -11,7 +11,7 @@ export const Cast=()=>{
         if (!movieId) {
             return;
           }
-          getMovieCredits(movieId).then(response => setCast(response));
+          getMovieCredits(movieId).then(response => setCast(response)).then(error=> console.log(error));
         }, [movieId]);
         if (!cast) {
             return;
@@ -19,12 +19,12 @@ export const Cast=()=>{
     console.log(cast)
     const imgUrl='https://image.tmdb.org/t/p/w500/'
     return <div>
-        {cast.map(({id, profile_path,character, name})=>(<ul key={id}>
+        {cast.length !== 0? (cast.map(({id, profile_path,character, name})=>(<ul key={id}>
 <li>
 <Img src={profile_path? `${imgUrl}${profile_path}`: noImage} alt={name} />
-    <p>{name}</p>
-    <p>Character: {character}</p>
+    <p>{name? name: 'No information'}</p>
+    <p>Character: {character? character: 'No information'}</p>
 </li>
-        </ul>))}
+        </ul>))): 'No information'}
     </div>
 }

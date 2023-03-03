@@ -14,11 +14,11 @@ export const Reviews=()=>{
             return;
           }
     return <div>
-        {reviews.map(({id,author,content})=>(<ul key={id}>
+        {reviews.length !== 0? (reviews.map(({id,author,content})=>(<ul key={id}>
             <li>
-                <p>{author}</p>
-                <p>{content}</p>
+                <p>{author? author: 'No information'}</p>
+                <p>{content? content: 'No information'}</p>
             </li>
-        </ul>))}
+        </ul>))) : 'No information'}
     </div>
 }

@@ -7,20 +7,36 @@ import { BackLink } from 'components/BackLink';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
+  const[error, setError]=useState(null)
   const { movieId } = useParams();
-  // console.log(movieId);
+  
   const location = useLocation();
-  // const ref = useRef(location.state?.from ?? '/movies');
+  
   const backLinkHref = location.state?.from ?? "/";
 
-  useEffect(() => {
-    if (!movieId) {
-      return;
-    }
-    GetMovieById(movieId).then(response => setMovie(response));
-  }, [movieId]);
+  // useEffect(() => {
+  //   if (!movieId) {
+  //     return;
+  //   }
+  //   GetMovieById(movieId).then(response => setMovie(response));
+  // }, [movieId]);
 
-  // console.log(movie);
+  useEffect(()=>{
+if (!movieId){return}
+const onRequestHandler=async()=>{
+  try{
+    const response= await GetMovieById(movieId)
+  setMovie(response)
+  }
+  catch (error){
+  console.log(error.message)
+  setError(error)
+  }
+}
+onRequestHandler()
+
+  },[movieId])
+ 
 
   return (
 <main> 
@@ -36,6 +52,9 @@ const MovieDetails = () => {
     </div>
     <Outlet/>
     </div>
+    {error && (
+      <p>Something is wrong</p>
+    )}
     </main>
     
   )
