@@ -8,17 +8,32 @@ import { getMovieByQuery } from 'services/Api';
 export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies]=useState([])
+  const [error, setError]=useState(false)
   
   const movieName=searchParams.get('query')
   // console.log(movieName)
 
-  useEffect(()=>{
+  // useEffect(()=>{
     
-    if(!movieName){
+  //   if(!movieName){
       
-      return}
-    getMovieByQuery(movieName).then(res=>setMovies(res))
-  },[movieName])
+  //     return}
+  //   getMovieByQuery(movieName).then(res=>setMovies(res))
+  // },[movieName])
+  useEffect(()=>{
+    if(!movieName){return}
+    getMovieByQuery(movieName).then(response=>{
+      if(!response.length){
+        setError(true)
+        return(console.log(error))
+      }
+      setError(false)
+      setMovies(response)
+    }
+      
+      
+    )
+  },[movieName, error])
   
 
  const handleSearch=query=>{
@@ -36,6 +51,7 @@ console.log(movies)
     <div>
       
       <SearchBox onSubmit={handleSearch}/>
+      {error && <p>There is no movies with this request. Please, try again</p>}
       <ListMovies movies={movies}/>
       <Outlet />
     </div>
