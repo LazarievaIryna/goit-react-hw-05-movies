@@ -12,7 +12,8 @@ import { Link } from 'react-router-dom';
  
 `
 export const Item=styled.li`
- 
+ border: 1px solid black;
+ border-radius: 4px;
    `
 
 export const Img=styled.img`
@@ -20,6 +21,7 @@ display:block;
 height: auto`
 
 export const Title=styled.h2`
+font-size: 16px;
 `
 export const StyledLink=styled(Link)`
 text-decoration: none;
