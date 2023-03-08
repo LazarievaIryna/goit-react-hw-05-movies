@@ -1,6 +1,6 @@
 
 
-import{Wrapper, Card} from './MovieCard.styled'
+import{Wrapper, Card, Img} from './MovieCard.styled'
 import noImage from '../img/noImage.png'
 
 export const MovieCard = ({ movieInfo }) => {
@@ -14,7 +14,7 @@ export const MovieCard = ({ movieInfo }) => {
   return (
     <Wrapper>
       
-      <img src={poster_path? `${imgUrl}${poster_path}`: noImage} alt={title} />
+      <Img src={poster_path? `${imgUrl}${poster_path}`: noImage} alt={title} />
       <Card>
       <h2>
         {title}&nbsp;({date})

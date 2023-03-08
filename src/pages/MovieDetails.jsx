@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 // import { useRef } from 'react';
 import { GetMovieById } from 'services/Api';
 import { MovieCard } from '../components/MovieCard';
 import { BackLink } from 'components/BackLink';
+import {List, Item,StyledLink} from './MovieDetails.styled'
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -45,10 +46,10 @@ onRequestHandler()
    
     <div>
       <p>Additional information</p>
-      <ul>
-        <li> <Link to="cast" state={{ from: backLinkHref }}>Cast</Link></li>
-        <li> <Link to="reviews" state={{ from: backLinkHref }}>Reviews</Link></li>
-      </ul>
+      <List>
+        <Item> <StyledLink to="cast" state={{ from: backLinkHref }}>Cast</StyledLink></Item>
+        <Item> <StyledLink to="reviews" state={{ from: backLinkHref }}>Reviews</StyledLink></Item>
+      </List>
     </div>
     <Outlet/>
     </div>
