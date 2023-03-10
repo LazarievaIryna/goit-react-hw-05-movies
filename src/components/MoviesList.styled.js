@@ -24,13 +24,14 @@ width: 100%`
 export const Title=styled.h2`
 font-size: 16px;
 margin: 0;
+color: white;
 `
 export const StyledLink=styled(Link)`
 text-decoration: none;
 `
 export const Card=styled.div`
 height: 350px;
-border: 1px solid gray;
+border: 1px solid black;
  border-radius: 4px;
  &:hover{
   box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.06),
@@ -39,8 +40,10 @@ border: 1px solid gray;
 `
 export const TitleBox=styled.div`
 /* padding: 20px 24px; */
+height: 50px;
 margin: 0;
 display: grid;
     justify-items: center;
     padding: 5px;
+    background-color: grey;
 `

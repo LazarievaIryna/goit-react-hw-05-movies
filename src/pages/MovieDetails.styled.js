@@ -8,3 +8,5 @@ text-decoration: none`
 export const StyledLink=styled(Link)`
 text-decoration: none;
 `
+export const Text=styled.span`
+color: black`

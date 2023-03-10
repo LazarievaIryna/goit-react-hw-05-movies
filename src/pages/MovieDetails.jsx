@@ -4,7 +4,7 @@ import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { GetMovieById } from 'services/Api';
 import { MovieCard } from '../components/MovieCard';
 import { BackLink } from 'components/BackLink';
-import {List, Item,StyledLink} from './MovieDetails.styled'
+import {List, Item,StyledLink, Text} from './MovieDetails.styled'
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -47,8 +47,8 @@ onRequestHandler()
     <div>
       <p>Additional information</p>
       <List>
-        <Item> <StyledLink to="cast" state={{ from: backLinkHref }}>Cast</StyledLink></Item>
-        <Item> <StyledLink to="reviews" state={{ from: backLinkHref }}>Reviews</StyledLink></Item>
+        <Item> <StyledLink to="cast" state={{ from: backLinkHref }}><Text> Cast</Text></StyledLink></Item>
+        <Item> <StyledLink to="reviews" state={{ from: backLinkHref }}><Text>Reviews</Text></StyledLink></Item>
       </List>
     </div>
     <Outlet/>

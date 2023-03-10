@@ -1,7 +1,7 @@
 import { MoviesList } from 'components/MoviesList';
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'services/Api';
-import { Wrapper } from './Home.styled';
+import { Wrapper, Title } from './Home.styled';
 
 const Home = () => {
   const [trends, setTrends] = useState([]);
@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <Wrapper>
-      <h1>Trending today</h1>
+      <Title>Trending today</Title>
       <MoviesList movies={trends} />
     </Wrapper>
   );
