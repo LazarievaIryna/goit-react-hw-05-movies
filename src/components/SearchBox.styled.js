@@ -13,6 +13,7 @@ export const Input = styled.input`
   padding: 8px 32px 8px 8px;
   border-radius: 4px;
   font: inherit;
+  border: grey;
 `;
 
 export const Icon = styled(HiSearch)`
@@ -21,3 +22,8 @@ export const Icon = styled(HiSearch)`
   position: absolute;
   right: 6px;
 `;
+export const Button=styled.button`
+background-color: transparent;
+border: none;
+margin-left: 10px;
+`

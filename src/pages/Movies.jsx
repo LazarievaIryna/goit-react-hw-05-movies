@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSearchParams } from "react-router-dom";
 import { getMovieByQuery } from 'services/Api';
+import {Wrapper} from './Movies.styled'
 
 export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -48,12 +49,12 @@ export const Movies = () => {
  
 console.log(movies)
   return (
-    <div>
+    <Wrapper>
       
       <SearchBox onSubmit={handleSearch}/>
       {error && <p>There is no movies with this request. Please, try again</p>}
       <ListMovies movies={movies}/>
       <Outlet />
-    </div>
+    </Wrapper>
   );
 };

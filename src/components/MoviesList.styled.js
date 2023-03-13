@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
  padding-left: 0;
  gap: 10px;
  list-style: none;
+ 
 
  
 `
@@ -33,6 +34,7 @@ export const Card=styled.div`
 height: 350px;
 border: 1px solid black;
  border-radius: 4px;
+ background-color: #4b4444;
  &:hover{
   box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.06),
     0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -45,5 +47,5 @@ margin: 0;
 display: grid;
     justify-items: center;
     padding: 5px;
-    background-color: grey;
+    /* background-color: grey; */
 `

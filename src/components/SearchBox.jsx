@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Wrapper, Input } from "./SearchBox.styled";
+import {GoSearch} from 'react-icons/go'
+import { Wrapper, Input,Button } from "./SearchBox.styled";
 
 export const SearchBox = ({ onSubmit }) => {
 const [query, setQuery]=useState('')
@@ -25,7 +26,7 @@ return (
       // name="searchValue"
       onChange={handleChange}
     />
-    <button type="submit">Search</button>
+    <Button type="submit"><GoSearch/></Button>
     </form>
   </Wrapper>
 );

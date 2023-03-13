@@ -5,7 +5,7 @@ export const Container = styled.div`
   /* max-width: 960px; */
   margin: 0 auto;
   padding: 0 16px;
-  /* background-color: #18351b; */
+  background-color: #cfb8b8;
 `;
 
 export const Header = styled.header`
@@ -36,6 +36,6 @@ export const Link = styled(NavLink)`
 
   &.active {
     color: white;
-    background-color: orangered;
+    background-color: #650808;
   }
 `;
