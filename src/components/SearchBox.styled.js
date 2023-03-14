@@ -26,4 +26,8 @@ export const Button=styled.button`
 background-color: transparent;
 border: none;
 margin-left: 10px;
+&:hover{
+  cursor: pointer;
+  color: white;
+}
 `
