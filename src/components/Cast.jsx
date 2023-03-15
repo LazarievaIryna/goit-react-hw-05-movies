@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getMovieCredits } from "services/Api"
-import {Img, List, Title, NameTitle} from './Cast.styled'
+import {Img, List, Title, NameTitle, ErrorText} from './Cast.styled'
 import noImage from '../img/noImage.png'
 
 export const Cast=()=>{
@@ -25,6 +25,7 @@ export const Cast=()=>{
     <NameTitle>{name? name: 'No information'}</NameTitle>
     <p><Title> Character:</Title> {character? character: <div>'No information'</div>}</p>
 </li>
-        </List>))): 'No information'}
+        </List>))): <ErrorText>No information
+            </ErrorText>}
     </div>
 }

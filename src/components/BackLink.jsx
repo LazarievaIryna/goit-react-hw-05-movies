@@ -6,21 +6,28 @@ const StyledLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 0;
+  padding: 5px;
+  /* padding: 8px 0; */
   color: black;
   text-decoration: none;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  /* text-transform: uppercase; */
+  margin-top: 4px;
+  margin-left: 10px;
+  border-radius: 4px;
+  
+  background-color: #d37690;
 
   :hover {
-    color: orangered;
+    color: white;
   }
 `;
 
 export const BackLink = ({ to, children }) => {
   return (
     <StyledLink to={to}>
-      <HiArrowLeft size="24" />
+      <HiArrowLeft size="20" />
       {children}
     </StyledLink>
   );

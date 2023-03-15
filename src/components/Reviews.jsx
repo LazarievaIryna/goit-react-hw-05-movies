@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import {getMovieReviews} from '../services/Api'
-import {List, Name, Text} from './Reviews.styled'
+import {List, Name, Text, ErrorText} from './Reviews.styled'
 export const Reviews=()=>{
     const [reviews, setReviews]=useState(null)
     const {movieId}=useParams()
@@ -20,6 +20,7 @@ export const Reviews=()=>{
                 <Name>{author? author: 'No information'}</Name>
                 <Text>{content? content: 'No information'}</Text>
             </li>
-        </List>))) : 'No information'}
+        </List>))) : <ErrorText>No information
+            </ErrorText>}
     </div>
 }

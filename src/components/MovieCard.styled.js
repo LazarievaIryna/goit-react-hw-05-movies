@@ -5,6 +5,7 @@ import styled from 'styled-components';
  /* margin-bottom: 5px; */
 
  padding: 10px;
+ /* background-color: aqua; */
 `
 export const Card=styled.div`margin-left:10px;`
 export const Img=styled.img`
@@ -13,10 +14,13 @@ export const Img=styled.img`
 
  
 `
-export const ImgNoImage=styled.span`
- 
- background-color: white;
-
- 
+export const Info=styled.div`
+padding-left:10px;
 `
+export const Score=styled.span`
+font-weight: bold;`
+export const Genres=styled.p`
+font-weight: bold;
+`
+
 

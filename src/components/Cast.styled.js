@@ -11,3 +11,7 @@ export const Title=styled.span`
 font-weight: bold`
 export const NameTitle=styled.p`
 font-style: italic;`
+export const ErrorText=styled.div`
+font-style: italic;
+margin-left: 10px;
+padding-top: 10px;`
