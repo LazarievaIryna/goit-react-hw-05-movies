@@ -1,12 +1,14 @@
-import { ListMovies } from 'components/ListMovies';
-import { SearchBox } from 'components/SearchBox';
+
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Outlet } from 'react-router-dom';
 import { useSearchParams } from "react-router-dom";
 import { getMovieByQuery } from 'services/Api';
 import {Wrapper} from './Movies.styled'
+import { ListMovies } from 'components/ListMovies';
+import { SearchBox } from 'components/SearchBox';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies]=useState([])
   const [error, setError]=useState(false)
@@ -47,7 +49,7 @@ export const Movies = () => {
 
 
  
-console.log(movies)
+
   return (
     <Wrapper>
       
@@ -58,3 +60,8 @@ console.log(movies)
     </Wrapper>
   );
 };
+export default Movies;
+Movies.propTypes={
+  onSubmit: PropTypes.func,
+  movies:PropTypes.array,
+}

@@ -14,7 +14,7 @@ export const Img=styled.img`
 
  
 `
-export const Info=styled.div`
+export const Info=styled.span`
 padding-left:10px;
 `
 export const Score=styled.span`

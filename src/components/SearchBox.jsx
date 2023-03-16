@@ -1,5 +1,6 @@
 import { useState } from "react";
-import {GoSearch} from 'react-icons/go'
+import PropTypes from 'prop-types';
+import {GoSearch} from 'react-icons/go';
 import { Wrapper, Input,Button } from "./SearchBox.styled";
 
 export const SearchBox = ({ onSubmit }) => {
@@ -34,3 +35,6 @@ return (
   
   }
   
+SearchBox.propTypes={
+  onSubmit:PropTypes.func.isRequired
+}

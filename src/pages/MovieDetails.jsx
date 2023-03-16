@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // import { useRef } from 'react';
 import { GetMovieById } from 'services/Api';
 import { MovieCard } from '../components/MovieCard';
@@ -53,7 +54,9 @@ onRequestHandler()
         <Item> <StyledLink to="reviews" state={{ from: backLinkHref }}><Text>Reviews</Text></StyledLink></Item>
       </List>
     </Wrapper>
-    <Outlet/>
+    <Suspense fallback={<div>Loading subpage...</div>}>
+        <Outlet />
+      </Suspense>
     </Container>
     {error && (
       <p>Something is wrong</p>
@@ -64,3 +67,6 @@ onRequestHandler()
   )
 };
 export default MovieDetails;
+MovieDetails.propTypes={
+  movieInfo:PropTypes.array
+}

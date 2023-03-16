@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import {getMovieReviews} from '../services/Api'
 import {List, Name, Text, ErrorText} from './Reviews.styled'
-export const Reviews=()=>{
+ const Reviews=()=>{
     const [reviews, setReviews]=useState(null)
     const {movieId}=useParams()
     useEffect(()=>{
@@ -24,3 +24,4 @@ export const Reviews=()=>{
             </ErrorText>}
     </div>
 }
+export default Reviews;

@@ -1,4 +1,5 @@
 import {  useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {StyledLink, Title, Card, TitleBox, Img, Wrapper} from './ListMovies.styled'
 import noImage from '../img/noImage.png'
 export const ListMovies=({movies})=>{
@@ -8,14 +9,14 @@ export const ListMovies=({movies})=>{
       <>
       <Wrapper>
         {movies.length > 0 && 
-        (movies.map(movie => (
-          <div key={movie.id}>
-            <StyledLink to={`${movie.id}` } state={{ from: location }}>
+        (movies.map(({id, poster_path, title}) => (
+          <div key={id}>
+            <StyledLink to={`${id}` } state={{ from: location }}>
               
               <Card>
-            <Img src={movie.poster_path? `${imgUrl}${movie.poster_path}`: noImage} alt={movie.title} />
+            <Img src={poster_path? `${imgUrl}${poster_path}`: noImage} alt={title} />
             <TitleBox>
-              <Title>{movie.title}</Title>
+              <Title>{title}</Title>
               </TitleBox>
               </Card>
             </StyledLink>
@@ -25,3 +26,13 @@ export const ListMovies=({movies})=>{
     </>
     )
 }
+ListMovies.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      poster_path: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      
+    }).isRequired
+  ).isRequired,
+};

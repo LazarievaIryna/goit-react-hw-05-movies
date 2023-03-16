@@ -1,5 +1,7 @@
-import { MoviesList } from 'components/MoviesList';
+
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { MoviesList } from 'components/MoviesList';
 import { getTrendingMovies } from 'services/Api';
 import { Wrapper, Title } from './Home.styled';
 
@@ -18,3 +20,7 @@ const Home = () => {
   );
 };
 export default Home;
+Home.propTypes={
+  trends: PropTypes.array
+}
+
