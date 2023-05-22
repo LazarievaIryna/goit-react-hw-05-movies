@@ -14,15 +14,7 @@ const Movies = () => {
   const [error, setError]=useState(false)
   
   const movieName=searchParams.get('query')
-  // console.log(movieName)
-
-  // useEffect(()=>{
-    
-  //   if(!movieName){
-      
-  //     return}
-  //   getMovieByQuery(movieName).then(res=>setMovies(res))
-  // },[movieName])
+ 
   useEffect(()=>{
     if(!movieName){return}
     getMovieByQuery(movieName).then(response=>{
