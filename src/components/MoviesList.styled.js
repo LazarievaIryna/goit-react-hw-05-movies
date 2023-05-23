@@ -12,10 +12,7 @@ import { Link } from 'react-router-dom';
 
  
 `
-// export const Item=styled.li`
-//  border: 1px solid black;
-//  border-radius: 4px;
-//    `
+   
 
 export const Img=styled.img`
 display:block;
@@ -41,11 +38,11 @@ border: 1px solid black;
  }
 `
 export const TitleBox=styled.div`
-/* padding: 20px 24px; */
+
 height: 50px;
 margin: 0;
 display: grid;
     justify-items: center;
     padding: 5px;
-    /* background-color: grey; */
+    
 `

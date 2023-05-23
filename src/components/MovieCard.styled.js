@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
  export const Wrapper=styled.section`
  display:flex;
- /* margin-bottom: 5px; */
+ 
 
  padding: 10px;
- /* background-color: aqua; */
+
 `
 export const Card=styled.div`margin-left:10px;`
 export const Img=styled.img`

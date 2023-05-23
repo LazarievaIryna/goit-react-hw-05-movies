@@ -7,12 +7,12 @@ const StyledLink = styled(Link)`
   align-items: center;
   gap: 4px;
   padding: 5px;
-  /* padding: 8px 0; */
+  
   color: black;
   text-decoration: none;
   font-weight: 400;
   font-size: 14px;
-  /* text-transform: uppercase; */
+  
   margin-top: 4px;
   margin-left: 10px;
   border-radius: 4px;

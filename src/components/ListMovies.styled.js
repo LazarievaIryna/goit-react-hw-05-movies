@@ -34,11 +34,11 @@ border: 1px solid black;
  }
 `
 export const TitleBox=styled.div`
-/* padding: 20px 24px; */
+
 height: 50px;
 margin: 0;
 display: grid;
     justify-items: center;
     padding: 5px;
-    /* background-color: grey; */
+    
 `

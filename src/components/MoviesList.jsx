@@ -4,7 +4,7 @@ import noImage from '../img/noImage.png'
 import {Wrapper, Img, Title, StyledLink, Card,TitleBox }from'./MoviesList.styled'
 
 export const MoviesList = ({ movies }) => {
-  // console.log(movies);
+
   const location = useLocation();
   const imgUrl = 'https://image.tmdb.org/t/p/w500';
   return (

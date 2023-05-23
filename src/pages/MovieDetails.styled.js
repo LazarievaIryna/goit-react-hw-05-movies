@@ -11,7 +11,7 @@ align-items: center;
 margin: 0;
 
     justify-content: space-evenly;
-    /* padding-bottom: 25px; */
+    
 `
 export const Item=styled.li`
 text-decoration: none;
@@ -19,8 +19,7 @@ margin-right: 15px;`
 
 export const StyledLink=styled(Link)`
 text-decoration: none;
-/* border: solid 1px black;
-border-radius: 2px; */
+
 border-radius: 4px;
 padding: 5px;
 background-color: #d37690;
@@ -42,12 +41,9 @@ padding: 10px;
 height: 50px;
 display:flex;
 align-items: center;
-/* background-color: aqua; */
+
 `
 
 export const Title=styled.p`
 font-weight: bold`
 
-export const LinkContainer=styled.div`
-/* background-color: aqua; */
-`

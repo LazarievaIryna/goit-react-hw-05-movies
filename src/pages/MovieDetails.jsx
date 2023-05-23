@@ -1,11 +1,11 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import { useRef } from 'react';
+
 import { GetMovieById } from 'services/Api';
 import { MovieCard } from '../components/MovieCard';
 import { BackLink } from 'components/BackLink';
-import {List, Item,StyledLink, Text, Wrapper, Title, Container, LinkContainer} from './MovieDetails.styled'
+import {List, Item,StyledLink, Text, Wrapper, Title, Container} from './MovieDetails.styled'
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -16,12 +16,7 @@ const MovieDetails = () => {
   
   const backLinkHref = location.state?.from ?? "/";
 
-  // useEffect(() => {
-  //   if (!movieId) {
-  //     return;
-  //   }
-  //   GetMovieById(movieId).then(response => setMovie(response));
-  // }, [movieId]);
+  
 
   useEffect(()=>{
 if (!movieId){return}
@@ -43,7 +38,7 @@ onRequestHandler()
   return (
 <main> 
   <div>
-  <LinkContainer><BackLink to={backLinkHref}>Go back</BackLink></LinkContainer>
+  <div><BackLink to={backLinkHref}>Go back</BackLink></div>
   
     <Container>{movie && <MovieCard movieInfo={movie} />}
    

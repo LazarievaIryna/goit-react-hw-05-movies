@@ -24,7 +24,7 @@ return (
       autoComplete="off"
       autoFocus
       value={query}
-      // name="searchValue"
+      
       placeholder='Search your movie'
       onChange={handleChange}
     />
