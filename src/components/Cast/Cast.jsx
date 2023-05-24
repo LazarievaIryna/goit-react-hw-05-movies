@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getMovieCredits } from "services/Api"
 import {Img, List, Title, NameTitle, ErrorText} from './Cast.styled'
-import noImage from '../img/noImage.png'
+import noImage from '../../img/noImage.png'
 
  const Cast=()=>{
     const [cast, setCast]=useState(null)

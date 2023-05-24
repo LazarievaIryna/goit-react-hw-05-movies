@@ -2,7 +2,7 @@
 
 import{Wrapper, Card, Img, Info, Score, Genres} from './MovieCard.styled'
 import PropTypes from 'prop-types';
-import noImage from '../img/noImage.png'
+import noImage from '../../img/noImage.png'
 
 export const MovieCard = ({ movieInfo }) => {
   const { title, release_date, vote_average, overview, genres, poster_path } =

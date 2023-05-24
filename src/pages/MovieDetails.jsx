@@ -3,8 +3,8 @@ import { useParams, Outlet, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { GetMovieById } from 'services/Api';
-import { MovieCard } from '../components/MovieCard';
-import { BackLink } from 'components/BackLink';
+import { MovieCard } from '../components/MovieCard/MovieCard';
+import { BackLink } from '../components/BackLink/BackLink';
 import {List, Item,StyledLink, Text, Wrapper, Title, Container} from './MovieDetails.styled'
 
 const MovieDetails = () => {

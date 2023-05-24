@@ -5,8 +5,8 @@ import { Outlet } from 'react-router-dom';
 import { useSearchParams } from "react-router-dom";
 import { getMovieByQuery } from 'services/Api';
 import {Wrapper} from './Movies.styled'
-import { ListMovies } from 'components/ListMovies';
-import { SearchBox } from 'components/SearchBox';
+import { ListMovies } from 'components/ListMovies/ListMovies';
+import { SearchBox } from 'components/SearchBox/SearchBox';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();

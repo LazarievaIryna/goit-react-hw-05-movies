@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import {getMovieReviews} from '../services/Api'
+import {getMovieReviews} from '../../services/Api'
 import {List, Name, Text, ErrorText} from './Reviews.styled'
  const Reviews=()=>{
     const [reviews, setReviews]=useState(null)

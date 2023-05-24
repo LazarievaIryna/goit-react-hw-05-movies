@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { MoviesList } from 'components/MoviesList';
+import { MoviesList } from 'components/MovieList/MoviesList';
 import { getTrendingMovies } from 'services/Api';
 import { Wrapper, Title } from './Home.styled';
 
