@@ -11,7 +11,7 @@ export const Card=styled.div`margin-left:10px;`
 export const Img=styled.img`
  max-height: 350px;
  background-color: white;
-
+ 
  
 `
 export const Info=styled.span`
